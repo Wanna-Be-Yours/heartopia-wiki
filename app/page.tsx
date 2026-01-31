@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
   EVENT_NOW, FISH_DATA, NPC_DATA, 
   INSECT_DATA, BIRD_DATA, WILD_ANIMALS_DATA, COOKING_DATA, GARDENING_DATA
@@ -23,7 +23,6 @@ export default function HeartopiaWiki() {
   const [locationFilter, setLocationFilter] = useState('all');
   const [weatherFilter, setWeatherFilter] = useState('all');
 
-  // RESET SEMUA FILTER SAAT TAB BERUBAH
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
     setSearchTerm('');
@@ -40,7 +39,7 @@ export default function HeartopiaWiki() {
       'Gardening': GARDENING_DATA
     };
     
-    let list = dataMap[activeTab] || [];
+    const list = dataMap[activeTab] || [];
 
     return list.filter((item) => {
       const itemName = item?.name || "";
@@ -50,7 +49,6 @@ export default function HeartopiaWiki() {
       const matchLevel = levelFilter === 'all' || itemLevel.toString() === levelFilter;
       
       const itemLocation = item?.location || "";
-      // Gunakan includes agar filter lokasi lebih fleksibel
       const matchLocation = locationFilter === 'all' || itemLocation.toLowerCase().includes(locationFilter.toLowerCase());
       
       const itemWeather = Array.isArray(item.weather) ? item.weather.join(' ') : (item.weather || '');
@@ -65,14 +63,14 @@ export default function HeartopiaWiki() {
         'Ikan': FISH_DATA, 'Serangga': INSECT_DATA, 'Burung': BIRD_DATA, 'Wild Animals': WILD_ANIMALS_DATA 
     };
     const list = dataMap[activeTab] || [];
-    // Mengambil lokasi unik dan membersihkan nilai null/undefined
     return Array.from(new Set(list.map(item => item.location).filter(Boolean)));
   }, [activeTab]);
 
   const renderContent = () => {
-    // Kita tambahkan "key" pada div utama agar React mereset scroll dan state DOM setiap pindah tab
+    // Wrapper dengan key activeTab memaksa React render ulang total saat pindah tab
     return (
-      <div key={`content-wrapper-${activeTab}`} className="animate-in fade-in duration-300">
+      <div key={`tab-content-${activeTab}`} className="animate-in fade-in duration-300">
+        
         {activeTab === 'Event' && (
           <div className="bg-blue-900/40 p-6 rounded-2xl border border-blue-400/30 shadow-xl">
             <h2 className="text-2xl font-bold text-blue-200 mb-2">{EVENT_NOW.name}</h2>
@@ -88,7 +86,7 @@ export default function HeartopiaWiki() {
         {activeTab === 'Gardening' && (
           <div className="grid grid-cols-1 gap-6">
             {filteredData.map((crop) => (
-              <div key={`crop-${crop.id}`} className="bg-gray-800/40 rounded-2xl border border-white/10 overflow-hidden shadow-xl">
+              <div key={`garden-${crop.id}-${crop.name}`} className="bg-gray-800/40 rounded-2xl border border-white/10 overflow-hidden shadow-xl">
                 <div className="p-4 border-b border-white/5 bg-gradient-to-r from-green-500/10 to-transparent flex justify-between items-center">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl">{crop.icon || '🌱'}</span>
@@ -105,10 +103,10 @@ export default function HeartopiaWiki() {
                             <tr>
                                 <th className="px-4 py-2">Info</th>
                                 <th className="px-4 py-2 text-red-400">Beli Benih</th>
-                                <th className="px-4 py-2">⭐</th>
-                                <th className="px-4 py-2">⭐⭐</th>
-                                <th className="px-4 py-2">⭐⭐⭐</th>
-                                <th className="px-4 py-2">⭐⭐⭐⭐</th>
+                                <th className="px-4 py-2 text-yellow-500">⭐</th>
+                                <th className="px-4 py-2 text-yellow-400">⭐⭐</th>
+                                <th className="px-4 py-2 text-yellow-300">⭐⭐⭐</th>
+                                <th className="px-4 py-2 text-yellow-200">⭐⭐⭐⭐</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-white/5">
@@ -116,7 +114,7 @@ export default function HeartopiaWiki() {
                                 <td className="px-4 py-3 text-gray-400 italic">Gold</td>
                                 <td className="px-4 py-3 text-red-400 font-mono">-{crop.seedPurchase}</td>
                                 {crop.prices.map((p: number, idx: number) => (
-                                    <td key={idx} className="px-4 py-3 text-yellow-200 font-mono">{p ? `+${p.toLocaleString()}` : '-'}</td>
+                                    <td key={`price-${idx}`} className="px-4 py-3 text-yellow-200 font-mono">{p ? `+${p.toLocaleString()}` : '-'}</td>
                                 ))}
                             </tr>
                         </tbody>
@@ -130,13 +128,13 @@ export default function HeartopiaWiki() {
         {activeTab === 'Masakan' && (
           <div className="space-y-6">
             {filteredData.map((dish) => (
-              <div key={`dish-${dish.id}`} className="bg-gray-800/40 rounded-2xl border border-white/10 overflow-hidden shadow-xl">
+              <div key={`dish-${dish.id}-${dish.name}`} className="bg-gray-800/40 rounded-2xl border border-white/10 overflow-hidden shadow-xl">
                 <div className="p-4 border-b border-white/5 bg-gradient-to-r from-orange-500/10 to-transparent flex justify-between items-center">
                   <div>
                     <h3 className="text-xl font-bold text-orange-300">{dish.name}</h3>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {dish.ingredients.map((ing: string, i: number) => (
-                            <span key={i} className="text-[10px] bg-white/5 px-2 py-0.5 rounded border border-white/10">{ing}</span>
+                            <span key={`ing-${i}`} className="text-[10px] bg-white/5 px-2 py-0.5 rounded border border-white/10">{ing}</span>
                         ))}
                     </div>
                   </div>
@@ -146,12 +144,12 @@ export default function HeartopiaWiki() {
                     <table className="w-full text-left text-xs md:text-sm">
                         <tbody className="divide-y divide-white/5">
                             <tr>
-                                <td className="px-4 py-3 text-gray-400 font-medium">💰 Harga</td>
-                                {dish.prices.map((p: number, i: number) => <td key={i} className="px-4 py-3 text-orange-200 font-mono">{p?.toLocaleString() || '-'}</td>)}
+                                <td className="px-4 py-3 text-gray-400 font-medium">💰 Harga Jual</td>
+                                {dish.prices.map((p: number, i: number) => <td key={`dp-${i}`} className="px-4 py-3 text-orange-200 font-mono">{p?.toLocaleString() || '-'}</td>)}
                             </tr>
                             <tr className="bg-white/5">
                                 <td className="px-4 py-3 text-gray-400 font-medium">⚡ Energi</td>
-                                {dish.energy.map((e: any, i: number) => <td key={i} className="px-4 py-3 text-green-400 font-bold">+{e}</td>)}
+                                {dish.energy.map((e: any, i: number) => <td key={`de-${i}`} className="px-4 py-3 text-green-400 font-bold">+{e}</td>)}
                             </tr>
                         </tbody>
                     </table>
@@ -161,7 +159,7 @@ export default function HeartopiaWiki() {
           </div>
         )}
 
-        {/* DEFAULT LAYOUT UNTUK IKAN, SERANGGA, BURUNG, NPC, WILD ANIMALS */}
+        {/* DEFAULT LAYOUT (Ikan, Serangga, Burung, NPC, Wild Animals) */}
         {['Ikan', 'Serangga', 'Burung', 'NPC', 'Wild Animals'].includes(activeTab) && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {activeTab === 'Wild Animals' && (
@@ -170,7 +168,7 @@ export default function HeartopiaWiki() {
                     </div>
                 )}
                 {filteredData.map((item) => (
-                    <div key={`${activeTab}-${item.id}`} className="bg-gray-800/40 p-4 rounded-xl border border-white/10 hover:border-pink-500/30 transition-all">
+                    <div key={`${activeTab}-${item.id}-${item.name}`} className="bg-gray-800/40 p-4 rounded-xl border border-white/10 hover:border-pink-500/30 transition-all">
                         <div className="flex justify-between items-start mb-2">
                             <h3 className="font-bold text-white text-lg">{item.name} {item.icon}</h3>
                             <div className="flex gap-1">
@@ -232,7 +230,7 @@ export default function HeartopiaWiki() {
               </select>
               <select className="bg-white/5 border border-white/10 rounded-xl px-2 py-3 outline-none" value={locationFilter} onChange={(e) => setLocationFilter(e.target.value)}>
                 <option value="all">Lokasi</option>
-                {uniqueLocations.map((loc: any) => <option key={loc} value={loc}>{loc}</option>)}
+                {uniqueLocations.map((loc: any) => <option key={`loc-${loc}`} value={loc}>{loc}</option>)}
               </select>
               <select className="bg-white/5 border border-white/10 rounded-xl px-2 py-3 outline-none" value={weatherFilter} onChange={(e) => setWeatherFilter(e.target.value)}>
                 <option value="all">Cuaca</option>
