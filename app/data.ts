@@ -866,26 +866,26 @@ export const FISH_DATA = [
 ];
 
 export const NPC_DATA = [
-  { id: 1, name: "Bob", role: "Real Estate & Home Exterior", location: "Main Square / Office", likes: ["Coffee", "Blueprints"], unlocks: "Renovasi Rumah, Pindah Plot, & Exterior" },
-  { id: 2, name: "Dorothee", role: "Clothing Merchant", location: "Boutique", likes: ["Silk", "Perfume"], unlocks: "Beli Baju, Aksesoris, & Gacha Outfit" },
-  { id: 3, name: "Naniwa", role: "Insect Specialist", location: "Town Park", likes: ["Honey", "Fruit Tart"], unlocks: "Hobby: Insect Catching & Jaring Serangga" },
-  { id: 4, name: "Collector", role: "Museum Director", location: "Museum", likes: ["Fossils", "Old Coins"], unlocks: "Donasi Ikan/Serangga & Hadiah Koleksi" },
-  { id: 5, name: "Andrew", role: "Furniture Merchant", location: "Furniture Store", likes: ["Quality Timber", "Iron Ore"], unlocks: "Beli Perabotan, Kasur, & Dekorasi Interior" },
-  { id: 6, name: "Bailey J", role: "Hobby Mentor (Painting)", location: "Art Street / Studio", likes: ["Canvas", "Paint"], unlocks: "Hobby: Painting & Peralatan Lukis" },
-  { id: 7, name: "Mrs. Joan", role: "Gardening & Florist", location: "Flower Shop", likes: ["Seeds", "Watering Can"], unlocks: "Hobby: Gardening, Bibit Bunga, & Pupuk" },
-  { id: 8, name: "Ka Ching", role: "Investment & Bank", location: "Bank / Financial Dist.", likes: ["Gold Bar", "Tea"], unlocks: "Tukar Mata Uang & Investasi Guild" },
-  { id: 9, name: "Albert", role: "Daily General Store", location: "Albert’s Shop", likes: ["Milk", "Bread"], unlocks: "Alat Dasar, Bahan Masak, & Item Harian" },
-  { id: 10, name: "Vernie", role: "Librarian & Records", location: "Library", likes: ["Ink", "Old Books"], unlocks: "Guidebook, Lore, & Resep Blueprint" },
-  { id: 11, name: "Bill", role: "Crafting Specialist", location: "Workshop", likes: ["Stone", "Hammer"], unlocks: "Upgrade Alat (Axe/Pickaxe) & Material Bahan" },
-  { id: 12, name: "Will", role: "Courier & Social", location: "Post Office", likes: ["Envelopes", "Snack"], unlocks: "Kirim Hadiah ke Teman & Sistem Surat" },
-  { id: 13, name: "Patti", role: "Chef & Cooking Mentor", location: "Restaurant Kitchen", likes: ["Eggs", "Sugar"], unlocks: "Hobby: Cooking & Resep Masakan" },
-  { id: 14, name: "Vanya", role: "Music & Performance", location: "Town Square Stage", likes: ["Sheet Music", "Flowers"], unlocks: "Hobby: Music, Alat Musik, & Partitur" },
-  { id: 15, name: "Blanc", role: "Pet Specialist (Cats)", location: "Pet Center", likes: ["Cat Food", "Yarn"], unlocks: "Adopsi Kucing & Perlengkapan Kucing" },
-  { id: 16, name: "Atara", role: "Pet Specialist (Dogs)", location: "Pet Center", likes: ["Dog Food", "Bone"], unlocks: "Adopsi Anjing & Perlengkapan Anjing" },
-  { id: 17, name: "Annie", role: "Animal Husbandry", location: "Farm Area", likes: ["Wheat", "Carrots"], unlocks: "Hobby: Farming (Ternak Ayam/Sapi)" },
-  { id: 18, name: "Eric", role: "Mountain & Onsen Guide", location: "Onsen Mountain", likes: ["Hot Tea", "Walking Stick"], unlocks: "Akses Pemandian & Eksplorasi Gunung" },
-  { id: 19, name: "Massimo", role: "Gourmet Specialist", location: "Fancy Restaurant", likes: ["Truffles", "Wine"], unlocks: "Masakan Bintang 5 & Buff Status Permanen" },
-  { id: 20, name: "Doris", role: "Mysterious Peddler", location: "Roaming (Special Weather)", likes: ["Rare Artifacts", "Bottle"], unlocks: "Item Limited Edition & Skin Langka" }
+{ id: 1, name: "Albert Jr.", profession: "Wandering Gold Merchant" },
+  { id: 2, name: "Bailey Jr.", profession: "Birdwatching Mentor & Store" },
+  { id: 3, name: "Dorothee", profession: "Clothing Store" },
+  { id: 4, name: "Mrs. Joan", profession: "Pet Care Mentor & Pet Shop" },
+  { id: 5, name: "Vernie", profession: "Forest Worker" },
+  { id: 6, name: "Andrew", profession: "Driving Mentor & Vehicle Store" },
+  { id: 7, name: "Blanc", profession: "Gardening Mentor & Gardening Store" },
+  { id: 8, name: "Eric", profession: "Park Manager" },
+  { id: 9, name: "Naniwa", profession: "Insect Catching Mentor & Supplies" },
+  { id: 10, name: "Will", profession: "Lighthouse Guardian" },
+  { id: 11, name: "Annie", profession: "Town Guide, Friendship & Music Store" },
+  { id: 12, name: "Bob", profession: "Furniture & Special Home Decor Store" },
+  { id: 13, name: "Ka Ching", profession: "General Store" },
+  { id: 14, name: "Patti", profession: "Woodland Mentor" },
+  { id: 15, name: "Bill", profession: "Sea Fishing Event" },
+  { id: 16, name: "Atara", profession: "Third Mayor" },
+  { id: 17, name: "Collector", profession: "Time-Limited Festival" },
+  { id: 18, name: "Massimo", profession: "Cooking Mentor & Cooking Store" },
+  { id: 19, name: "Vanya", profession: "Fishing Mentor & Fishing Store" },
+  { id: 20, name: "Doris", profession: "Special Merchant"}
 ];
 
 export const INSECT_DATA = [
@@ -1017,14 +1017,14 @@ export const BIRD_DATA = [
 ];
 
 export const WILD_ANIMALS_DATA = [
-  { id: 1, name: "Capybara", location: "Ruins in the circle area", food: ["Tomato", "Raspberry", "Grape"], weather: "Cloudy", "icon": "🦦" },
-  { id: 1, name: "Sika Deer", location: "Between Deer Tower & Spirit Oak Pine Forest", food: ["Lettuce", "House Salad", "Branch"], weather: "Cloudy", "icon": "🦌" },
-  { id: 1, name: "Panda", location: "Jump Puzzle", food: ["Bamboo", "Apple", "Corn"], weather: "Cloudy", "icon": "🐼" },
-  { id: 1, name: "Sea Otter", location: "Fishing Village Square Harbor", food: ["Mussel", "Common Shrimp", "Oriental Shrimp"], weather: "Cloudy", "icon": "🦦" },
-  { id: 1, name: "Alpaca", location: "Amethyst near wooden bridge", food: ["Blueberry", "Pineapple", "Wheat"], weather: "Sunny", "icon": "🦙" },
-  { id: 1, name: "Fox", location: "Below Meadow Lake", food: ["Meat", "European Perch", "Largemouth Bass"], weather: "Rainbow", "icon": "🦊" },
-  { id: 1, name: "Bunny", location: "Suburbs (Road from Art Street)", food: ["Weed", "Carrot", "Strawberry"], weather: "Sunny", "icon": "🐰" },
-  { id: 1, name: "Ferret", location: "Below Rosy River near wooden bridge", food: ["Egg", "Sea Bass", "Goby"], weather: "Rainbow", "icon": "🦦" }
+  { id: 1, name: "Capybara", location: "Ruins in the circle area", food: ["Tomato", "Raspberry", "Grape"], weather: "Cloudy", icon: "🦦" },
+  { id: 1, name: "Sika Deer", location: "Between Deer Tower & Spirit Oak Pine Forest", food: ["Lettuce", "House Salad", "Branch"], weather: "Cloudy", icon: "🦌" },
+  { id: 1, name: "Panda", location: "Jump Puzzle", food: ["Bamboo", "Apple", "Corn"], weather: "Cloudy", icon: "🐼" },
+  { id: 1, name: "Sea Otter", location: "Fishing Village Square Harbor", food: ["Mussel", "Common Shrimp", "Oriental Shrimp"], weather: "Cloudy", icon: "🦦" },
+  { id: 1, name: "Alpaca", location: "Amethyst near wooden bridge", food: ["Blueberry", "Pineapple", "Wheat"], weather: "Sunny", icon: "🦙" },
+  { id: 1, name: "Fox", location: "Below Meadow Lake", food: ["Meat", "European Perch", "Largemouth Bass"], weather: "Rainbow", icon: "🦊" },
+  { id: 1, name: "Bunny", location: "Suburbs (Road from Art Street)", food: ["Weed", "Carrot", "Strawberry"], weather: "Sunny", icon: "🐰" },
+  { id: 1, name: "Ferret", location: "Below Rosy River near wooden bridge", food: ["Egg", "Sea Bass", "Goby"], weather: "Rainbow", icon: "🦦" }
 ];
 
 export const COOKING_DATA = [
@@ -1550,4 +1550,150 @@ export const COOKING_DATA = [
     prices: [670, 1005, 1340, 2680],
     energy: [48, 58, 67, 77, 96]
   } //
+];
+
+export const GARDENING_DATA = [
+  {
+    id: 1,
+    name: "Potatoes",
+    icon: "🥔",
+    growthTime: "60 min",
+    gardeningLvl: 1,
+    seedSell: 15,
+    seedPurchase: 30,
+    prices: [90, 120, 150, 180],
+    weather: "☀️"
+  },
+  {
+    id: 2,
+    name: "Tomato",
+    icon: "🍅",
+    growthTime: "15 min",
+    gardeningLvl: 1,
+    seedSell: 5,
+    seedPurchase: 10,
+    prices: [30, 40, 50, 60, 70],
+    weather: "☀️"
+  },
+  {
+    id: 3,
+    name: "Wheat",
+    icon: "🌾",
+    growthTime: "4 hours",
+    gardeningLvl: 2,
+    seedSell: 47,
+    seedPurchase: 95,
+    prices: [285, 381, 475, 570, 855],
+    weather: "☀️"
+  },
+  {
+    id: 4,
+    name: "Lettuce",
+    icon: "🥬",
+    growthTime: "8 hours",
+    gardeningLvl: 3,
+    seedSell: 72,
+    seedPurchase: 145,
+    prices: [435, 582, 726, 870, 1305],
+    weather: "☀️"
+  },
+  {
+    id: 5,
+    name: "Pineapple",
+    icon: "🍍",
+    growthTime: "30 min",
+    gardeningLvl: 4,
+    seedSell: 7,
+    seedPurchase: 15,
+    prices: [52, 69, 86, 104],
+    weather: "☀️"
+  },
+  {
+    id: 6,
+    name: "Carrot",
+    icon: "🥕",
+    growthTime: "2 hours",
+    gardeningLvl: 5,
+    seedSell: 25,
+    seedPurchase: 50,
+    prices: [155, 207, 258, 310],
+    weather: "☀️"
+  },
+  {
+    id: 7,
+    name: "Strawberry",
+    icon: "🍓",
+    growthTime: "6 hours",
+    gardeningLvl: 6,
+    seedSell: 62,
+    seedPurchase: 125,
+    prices: [375, 502, 626, 750, 1125],
+    weather: "☀️"
+  },
+  {
+    id: 8,
+    name: "Corn",
+    icon: "🌽",
+    growthTime: "12 hours",
+    gardeningLvl: 6,
+    seedSell: 85,
+    seedPurchase: 170,
+    prices: [515, 690, 860, null, 1545],
+    weather: "☀️"
+  },
+  {
+    id: 9,
+    name: "Grape",
+    icon: "🍇",
+    growthTime: "10 hours",
+    gardeningLvl: 7,
+    seedSell: 80,
+    seedPurchase: 160,
+    prices: [480, 643, 801, 960],
+    weather: "☀️"
+  },
+  {
+    id: 10,
+    name: "Eggplant",
+    icon: "🍆",
+    growthTime: "7 hours",
+    gardeningLvl: 8,
+    seedSell: null,
+    seedPurchase: 135,
+    prices: [406, 544, 678, 812, 1218],
+    weather: "☀️"
+  },
+  {
+    id: 11,
+    name: "Tea Tree",
+    icon: "🍵",
+    growthTime: "N/A",
+    gardeningLvl: 11,
+    seedSell: null,
+    seedPurchase: 25,
+    prices: [],
+    weather: "☀️"
+  },
+  {
+    id: 12,
+    name: "Cacao",
+    icon: "🍫",
+    growthTime: "N/A",
+    gardeningLvl: 12,
+    seedSell: null,
+    seedPurchase: 110,
+    prices: [],
+    weather: "☀️"
+  },
+  {
+    id: 13,
+    name: "Avocado",
+    icon: "🥑",
+    growthTime: "N/A",
+    gardeningLvl: 13,
+    seedSell: null,
+    seedPurchase: 180,
+    prices: [],
+    weather: "☀️"
+  }
 ];
