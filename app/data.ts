@@ -1017,14 +1017,14 @@ export const BIRD_DATA = [
 ];
 
 export const WILD_ANIMALS_DATA = [
-  { id: 1, name: "Capybara", location: "Ruins in the circle area", food: ["Tomato", "Raspberry", "Grape"], weather: "Cloudy", icon: "🦦" },
-  { id: 1, name: "Sika Deer", location: "Between Deer Tower & Spirit Oak Pine Forest", food: ["Lettuce", "House Salad", "Branch"], weather: "Cloudy", icon: "🦌" },
-  { id: 1, name: "Panda", location: "Jump Puzzle", food: ["Bamboo", "Apple", "Corn"], weather: "Cloudy", icon: "🐼" },
-  { id: 1, name: "Sea Otter", location: "Fishing Village Square Harbor", food: ["Mussel", "Common Shrimp", "Oriental Shrimp"], weather: "Cloudy", icon: "🦦" },
-  { id: 1, name: "Alpaca", location: "Amethyst near wooden bridge", food: ["Blueberry", "Pineapple", "Wheat"], weather: "Sunny", icon: "🦙" },
-  { id: 1, name: "Fox", location: "Below Meadow Lake", food: ["Meat", "European Perch", "Largemouth Bass"], weather: "Rainbow", icon: "🦊" },
-  { id: 1, name: "Bunny", location: "Suburbs (Road from Art Street)", food: ["Weed", "Carrot", "Strawberry"], weather: "Sunny", icon: "🐰" },
-  { id: 1, name: "Ferret", location: "Below Rosy River near wooden bridge", food: ["Egg", "Sea Bass", "Goby"], weather: "Rainbow", icon: "🦦" }
+  { id: 1, name: "Capybara", location: "Ruins in the circle area", food: ["Tomato", "Raspberry", "Grape"], icon: "🦦" },
+  { id: 1, name: "Sika Deer", location: "Between Deer Tower & Spirit Oak Pine Forest", food: ["Lettuce", "House Salad", "Branch"], icon: "🦌" },
+  { id: 1, name: "Panda", location: "Jump Puzzle", food: ["Bamboo", "Apple", "Corn"], icon: "🐼" },
+  { id: 1, name: "Sea Otter", location: "Fishing Village Square Harbor", food: ["Mussel", "Common Shrimp", "Oriental Shrimp"], icon: "🦦" },
+  { id: 1, name: "Alpaca", location: "Amethyst near wooden bridge", food: ["Blueberry", "Pineapple", "Wheat"], icon: "🦙" },
+  { id: 1, name: "Fox", location: "Below Meadow Lake", food: ["Meat", "European Perch", "Largemouth Bass"], icon: "🦊" },
+  { id: 1, name: "Bunny", location: "Suburbs (Road from Art Street)", food: ["Weed", "Carrot", "Strawberry"], icon: "🐰" },
+  { id: 1, name: "Ferret", location: "Below Rosy River near wooden bridge", food: ["Egg", "Sea Bass", "Goby"], icon: "🦦" }
 ];
 
 export const COOKING_DATA = [
@@ -1562,7 +1562,6 @@ export const GARDENING_DATA = [
     seedSell: 15,
     seedPurchase: 30,
     prices: [90, 120, 150, 180],
-    weather: "☀️"
   },
   {
     id: 2,
@@ -1573,7 +1572,6 @@ export const GARDENING_DATA = [
     seedSell: 5,
     seedPurchase: 10,
     prices: [30, 40, 50, 60, 70],
-    weather: "☀️"
   },
   {
     id: 3,
@@ -1584,7 +1582,6 @@ export const GARDENING_DATA = [
     seedSell: 47,
     seedPurchase: 95,
     prices: [285, 381, 475, 570, 855],
-    weather: "☀️"
   },
   {
     id: 4,
@@ -1595,7 +1592,6 @@ export const GARDENING_DATA = [
     seedSell: 72,
     seedPurchase: 145,
     prices: [435, 582, 726, 870, 1305],
-    weather: "☀️"
   },
   {
     id: 5,
@@ -1606,7 +1602,6 @@ export const GARDENING_DATA = [
     seedSell: 7,
     seedPurchase: 15,
     prices: [52, 69, 86, 104],
-    weather: "☀️"
   },
   {
     id: 6,
@@ -1617,7 +1612,6 @@ export const GARDENING_DATA = [
     seedSell: 25,
     seedPurchase: 50,
     prices: [155, 207, 258, 310],
-    weather: "☀️"
   },
   {
     id: 7,
@@ -1628,7 +1622,6 @@ export const GARDENING_DATA = [
     seedSell: 62,
     seedPurchase: 125,
     prices: [375, 502, 626, 750, 1125],
-    weather: "☀️"
   },
   {
     id: 8,
@@ -1639,7 +1632,6 @@ export const GARDENING_DATA = [
     seedSell: 85,
     seedPurchase: 170,
     prices: [515, 690, 860, null, 1545],
-    weather: "☀️"
   },
   {
     id: 9,
@@ -1650,7 +1642,6 @@ export const GARDENING_DATA = [
     seedSell: 80,
     seedPurchase: 160,
     prices: [480, 643, 801, 960],
-    weather: "☀️"
   },
   {
     id: 10,
@@ -1661,7 +1652,6 @@ export const GARDENING_DATA = [
     seedSell: null,
     seedPurchase: 135,
     prices: [406, 544, 678, 812, 1218],
-    weather: "☀️"
   },
   {
     id: 11,
@@ -1672,7 +1662,6 @@ export const GARDENING_DATA = [
     seedSell: null,
     seedPurchase: 25,
     prices: [],
-    weather: "☀️"
   },
   {
     id: 12,
@@ -1683,7 +1672,6 @@ export const GARDENING_DATA = [
     seedSell: null,
     seedPurchase: 110,
     prices: [],
-    weather: "☀️"
   },
   {
     id: 13,
@@ -1694,6 +1682,46 @@ export const GARDENING_DATA = [
     seedSell: null,
     seedPurchase: 180,
     prices: [],
-    weather: "☀️"
   }
+];
+
+export const FORAGEABLE_DATA = [
+  { id: 1, name: "Branch", location: "Bushes", sellPrice: 5, energy: null, buyPrice: null },
+  { id: 2, name: "Timber", location: "Tree", sellPrice: 6, energy: null, buyPrice: null },
+  { id: 3, name: "Quality Timber", location: "Tree", sellPrice: 12, energy: null, buyPrice: null },
+  { id: 4, name: "Rare Timber", location: "Gigantic Tree in the Suburb", sellPrice: 50, energy: null, buyPrice: null },
+  { id: 5, name: "Roaming Oak Timber", location: "Roaming Oak-Oak", sellPrice: 150, energy: null, buyPrice: null },
+  { id: 6, name: "Bamboo", location: "Bamboo", sellPrice: 7, energy: null, buyPrice: null },
+  { id: 7, name: "Stone", location: "Home", sellPrice: 8, energy: null, buyPrice: null },
+  { id: 8, name: "Ore", location: "Home", sellPrice: 14, energy: null, buyPrice: null },
+  { id: 9, name: "Flawless Fluorite", location: "Fluorite Mine", sellPrice: 150, energy: null, buyPrice: null },
+  { id: 10, name: "Starfall Shard", location: "Meteor Shower (Meteorite Ore)", sellPrice: 150, energy: null, buyPrice: null },
+
+  { id: 11, name: "Apple", location: "Home", sellPrice: 28, energy: 8, buyPrice: null },
+  { id: 12, name: "Mandarin", location: "Home", sellPrice: 28, energy: 8, buyPrice: null },
+  { id: 13, name: "Blueberry", location: "Home", sellPrice: 16, energy: 5, buyPrice: null },
+  { id: 14, name: "Raspberry", location: "Home", sellPrice: 26, energy: 7, buyPrice: null },
+
+  { id: 15, name: "Shiitake", location: "Fishing Village", sellPrice: 16, energy: 5, buyPrice: null },
+  { id: 16, name: "Bizarre Shiitake (Black)", location: "Fishing Village", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 17, name: "Bizarre Shiitake (Red)", location: "Fishing Village", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 18, name: "Bizarre Shiitake (Blue)", location: "Fishing Village", sellPrice: 16, energy: null, buyPrice: null },
+
+  { id: 19, name: "Button Mushroom", location: "Flower Field", sellPrice: 16, energy: 5, buyPrice: null },
+  { id: 20, name: "Bizarre Button Mushroom (Blue)", location: "Flower Field", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 21, name: "Bizarre Button Mushroom (Pink)", location: "Flower Field", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 22, name: "Bizarre Button Mushroom (Green)", location: "Flower Field", sellPrice: 16, energy: null, buyPrice: null },
+
+  { id: 23, name: "Penny Bun", location: "Forest", sellPrice: 16, energy: 5, buyPrice: null },
+  { id: 24, name: "Bizarre Penny Bun (Purple)", location: "Forest", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 25, name: "Bizarre Penny Bun (Red)", location: "Forest", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 26, name: "Bizarre Penny Bun (Pink)", location: "Forest", sellPrice: 16, energy: null, buyPrice: null },
+
+  { id: 27, name: "Oyster Mushroom", location: "Onsen Mountain", sellPrice: 16, energy: 5, buyPrice: null },
+  { id: 28, name: "Bizarre Oyster Mushroom (Pink)", location: "Onsen Mountain", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 29, name: "Bizarre Oyster Mushroom (Purple)", location: "Onsen Mountain", sellPrice: 16, energy: null, buyPrice: null },
+  { id: 30, name: "Bizarre Oyster Mushroom (Orange)", location: "Onsen Mountain", sellPrice: 16, energy: null, buyPrice: null },
+
+  { id: 31, name: "Black Truffle", location: "Forest (Forest Island)", sellPrice: 99, energy: 25, buyPrice: null },
+  { id: 32, name: "Matsutake", location: "Forest (Spirit Oak Pine)", sellPrice: null, energy: 5, buyPrice: null }
 ];
