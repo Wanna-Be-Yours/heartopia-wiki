@@ -100,7 +100,7 @@ export default function HeartopiaWiki() {
                   src={`/img/locations/${selectedItem.name.toLowerCase().replace(/\s+/g, '_')}.png`} 
                   alt={`Map ${selectedItem.name}`}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
-                  onError={(e) => { (e.target as HTMLImageElement).src = '/img/default_map.png'; }}
+                  onError={(e) => { (e.target as HTMLImageElement).src = '/img/ingredient_map.png'; }}
                 />
                 <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black to-transparent">
                   <p className="text-[10px] text-white/50 uppercase tracking-widest font-bold text-center">Specific Spawn Point</p>
